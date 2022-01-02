@@ -55,8 +55,8 @@ for i,v in pairs(game.Players:GetChildren()) do
     end 
 end
 
-if #game.Players:GetChildren() <= MaxPlayersOnAlert then
-    if UltrasCanBeInServer == true or amountOfUltras <= 0 then
+if #game.Players:GetPlayers() <= MaxPlayersOnAlert then
+    if UltrasCanBeInServer == true or MaxAmountOfUltras <= 0 then
         safeServer = true
         local time = os.date("*t")
         time = string.format("%02d:%02d:%02d", time.hour, time.min, time.sec) or "00:00:00"
