@@ -18,14 +18,14 @@ end
 writefile("OracleSafeServerFinderSettings.lua", game:GetService("HttpService"):JSONEncode(Settings))
 
 local Settings = game:GetService("HttpService"):JSONDecode(readfile("OracleSafeServerFinderSettings.lua"))
-task.wait(0.1)
-local timeAtStart = Settings[timeAtStart]
-local MaxHealthToBeAUltra = Settings[MaxHealthToBeAUltra]
-local UltrasCanBeInServer = Settings[UltrasCanBeInServer]
-local MaxPlayersOnAlert = Settings[MaxPlayersOnAlert]
-local webhook = Settings[webhook]
-local MaxAmountOfUltras = Settings[MaxAmountOfUltras]
-local HopServersEvenIfYouFoundASafe = Settings[HopServersEvenIfYouFoundASafe]
+
+local timeAtStart = Settings["timeAtStart"]
+local MaxHealthToBeAUltra = Settings["MaxHealthToBeAUltra"]
+local UltrasCanBeInServer = Settings["UltrasCanBeInServer"]
+local MaxPlayersOnAlert = Settings["MaxPlayersOnAlert"]
+local webhook = Settings["webhook"]
+local MaxAmountOfUltras = Settings["MaxAmountOfUltras"]
+local HopServersEvenIfYouFoundASafe = Settings["HopServersEvenIfYouFoundASafe"]
 
 local RAMAccount = loadstring(game:HttpGet'https://raw.githubusercontent.com/ic3w0lf22/Roblox-Account-Manager/master/RAMAccount.lua')()
 local blockedSomeone = false
