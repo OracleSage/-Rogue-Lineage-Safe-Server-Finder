@@ -83,7 +83,7 @@ if #game.Players:GetPlayers() <= MaxPlayersOnAlert then
             Url = webhook,
             Method = "POST",
             Headers = {["Content-Type"] = "application/json"},
-	        Body = HTTP:JSONEncode(JSONTable)
+	        Body = game:GetService("HttpService"):JSONEncode(JSONTable)
         })
     end
 end
