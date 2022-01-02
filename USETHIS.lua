@@ -86,6 +86,6 @@ end
 local timeAfterRunning = os.clock()
 local justInCase = 0
 
---repeat task.wait(1) justInCase = justInCase + 1 until timeAfterRunning - timeAtStart >= 15 or justInCase >= 15
+repeat task.wait(1) justInCase = justInCase + 1 until timeAfterRunning - timeAtStart >= 15 or justInCase >= 15
 
 serverhop()
