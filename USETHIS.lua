@@ -1,12 +1,10 @@
 repeat wait() until game:IsLoaded()
 
-syn.queue_on_teleport('loadstring(game:HttpGet("I_Need_The_Github_Link_First", true))()')
+syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/OracleSage/-Rogue-Lineage-Safe-Server-Finder/main/USETHIS.lua", true))()')
 
 delay(30, function()
     game:GetService("TeleportService"):Teleport(3016661674)
 end)
-
-syn.queue_on_teleport()
 
 local RAMAccount = loadstring(game:HttpGet'https://raw.githubusercontent.com/ic3w0lf22/Roblox-Account-Manager/master/RAMAccount.lua')()
 local blockedSomeone = false
