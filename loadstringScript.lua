@@ -7,13 +7,13 @@ end
 
 local Settings = game:GetService("HttpService"):JSONDencode(readfile("OracleSafeServerFinderSettings.lua"))
 
-local timeAtStart = Settings[timeAtStart]
-local MaxHealthToBeAUltra = Settings[MaxHealthToBeAUltra]
-local UltrasCanBeInServer = Settings[UltrasCanBeInServer]
-local MaxPlayersOnAlert = Settings[MaxPlayersOnAlert]
-local webhook = Settings[webhook]
-local MaxAmountOfUltras = Settings[MaxAmountOfUltras]
-local HopServersEvenIfYouFoundASafe = Settings[HopServersEvenIfYouFoundASafe]
+local timeAtStart = Settings["timeAtStart"]
+local MaxHealthToBeAUltra = Settings["MaxHealthToBeAUltra"]
+local UltrasCanBeInServer = Settings["UltrasCanBeInServer"]
+local MaxPlayersOnAlert = Settings["MaxPlayersOnAlert"]
+local webhook = Settings["webhook"]
+local MaxAmountOfUltras = Settings["MaxAmountOfUltras"]
+local HopServersEvenIfYouFoundASafe = Settings["HopServersEvenIfYouFoundASafe"]
 
 local RAMAccount = loadstring(game:HttpGet'https://raw.githubusercontent.com/ic3w0lf22/Roblox-Account-Manager/master/RAMAccount.lua')()
 local blockedSomeone = false
