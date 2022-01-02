@@ -44,7 +44,7 @@ end
 
 for i,v in pairs(game.Players:GetChildren()) do
     if v.Character and v.Character.Humanoid.MaxHealth >= MaxHealthToBeAUltra then
-        amountOfUltras = amountOfUltras + 1
+        MaxAmountOfUltras = MaxAmountOfUltrass + 1
     end
     if usersBlocked[v] then blockedSomeone = true end
     if v ~= game.Players.LocalPlayer and blockedSomeone == false then
@@ -86,6 +86,6 @@ end
 local timeAfterRunning = os.clock()
 local justInCase = 0
 
-repeat task.wait(1) justInCase = justInCase + 1 until timeAfterRunning - timeAtStart >= 15 or justInCase >= 15
+--repeat task.wait(1) justInCase = justInCase + 1 until timeAfterRunning - timeAtStart >= 15 or justInCase >= 15
 
 serverhop()
