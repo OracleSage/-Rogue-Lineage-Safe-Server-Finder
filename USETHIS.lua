@@ -49,7 +49,7 @@ for i,v in pairs(game.Players:GetChildren()) do
     if usersBlocked[v] then blockedSomeone = true end
     if v ~= game.Players.LocalPlayer and blockedSomeone == false then
         local attempt = MyAccount:BlockUser(v)
-        if game:GetService("HttpService"):JSONDecode(attmpt).success == true then
+        if game:GetService("HttpService"):JSONDecode(attempt).success == true then
             blockedSomeone = true
         end
     end 
