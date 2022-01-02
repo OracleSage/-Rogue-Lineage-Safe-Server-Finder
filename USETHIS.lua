@@ -17,7 +17,7 @@ end
 
 writefile("OracleSafeServerFinderSettings.lua", game:GetService("HttpService"):JSONEncode(Settings))
 
-local Settings = game:GetService("HttpService"):JSONDencode(readfile("OracleSafeServerFinderSettings.lua"))
+local Settings = game:GetService("HttpService"):JSONDecode(readfile("OracleSafeServerFinderSettings.lua"))
 
 local timeAtStart = Settings[timeAtStart]
 local MaxHealthToBeAUltra = Settings[MaxHealthToBeAUltra]
