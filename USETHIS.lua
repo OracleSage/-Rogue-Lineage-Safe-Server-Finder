@@ -1,5 +1,10 @@
 repeat wait() until game:IsLoaded()
 
+if game.PlaceId == 3016661674 then
+    syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/OracleSage/-Rogue-Lineage-Safe-Server-Finder/main/USETHIS.lua", true))()')
+    repeat wait() until false
+end
+
 local timeAtStart = os.clock()
 local MaxHealthToBeAUltra = 140 --Change this to be the most health a player can have before the script considers them to be an ultra
 local UltrasCanBeInServer = false --Set to true if you don't care and can gank the server out
