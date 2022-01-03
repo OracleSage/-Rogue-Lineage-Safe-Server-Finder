@@ -1,4 +1,4 @@
-repeat wait() until game:IsLoaded()
+repeat task.wait() until game:IsLoaded()
 
 local Settings = {
     timeAtStart = os.clock(),
@@ -12,7 +12,7 @@ local Settings = {
 
 if game.PlaceId == 3016661674 then
     syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/OracleSage/-Rogue-Lineage-Safe-Server-Finder/main/USETHIS.lua", true))()')
-    repeat wait() until false
+    repeat task.wait() until false
 end
 
 writefile("OracleSafeServerFinderSettings.lua", game:GetService("HttpService"):JSONEncode(Settings))
