@@ -1,12 +1,15 @@
+if game.PlaceId == 5208655184 then
+
 repeat wait() until game:IsLoaded()
 
 local timeAtStart = os.clock()
 local MaxHealthToBeAUltra = 140 --Change this to be the most health a player can have before the script considers them to be an ultra
 local UltrasCanBeInServer = false --Set to true if you don't care and can gank the server out
 local MaxPlayersOnAlert = 5 --Can be changed to any number seen fit, if you have UltrasCanBeInServer as true you should set this pretty high
-local webhook = "" --Insert a webhook here for messages to be sent when a good server is found
+local Webhook = "" --Insert a webhook here for messages to be sent when a good server is found
 local MaxAmountOfUltras = 0 --Can be set to negatives for example -1 to allow only one ultra
 local HopServersEvenIfYouFoundASafe = false --Set to true if you want to find multiple servers ig
+getgenv().OracleWebhookSent = false
 
 if game.PlaceId == 3016661674 then
     syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/OracleSage/-Rogue-Lineage-Safe-Server-Finder/main/USETHIS.lua", true))()')
@@ -61,7 +64,7 @@ for i,v in pairs(game.Players:GetChildren()) do
 end
 
 if #game.Players:GetPlayers() <= MaxPlayersOnAlert then
-    if UltrasCanBeInServer == true or MaxAmountOfUltras <= 0 then
+    if UltrasCanBeInServer == true or MaxAmountOfUltras <= 0 and getgenv().OracleWebhookSent == false then
         safeServer = true
         local time = os.date("*t")
         time = string.format("%02d:%02d:%02d", time.hour, time.min, time.sec) or "00:00:00"
@@ -79,13 +82,15 @@ if #game.Players:GetPlayers() <= MaxPlayersOnAlert then
 	        	}
 	        }
 	    }
-        syn.request({
-            Url = webhook,
-            Method = "POST",
-            Headers = {["Content-Type"] = "application/json"},
+       	syn.request({
+	        Url = Webhook,
+	        Method = "POST",
+	        Headers = {
+	            ["Content-Type"] = "application/json"
+	        },
 	        Body = game:GetService("HttpService"):JSONEncode(JSONTable)
-        })
-    end
+	    })
+    end 
 end
 
 local timeAfterRunning = os.clock()
@@ -94,3 +99,5 @@ local justInCase = 0
 repeat task.wait(1) justInCase = justInCase + 1 until timeAfterRunning - timeAtStart >= 15 or justInCase >= 15
 
 serverhop()
+
+end
