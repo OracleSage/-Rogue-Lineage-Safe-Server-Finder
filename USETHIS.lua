@@ -5,7 +5,7 @@ local Settings = {
     MaxHealthToBeAUltra = 140, --Change this to be the most health a player can have before the script considers them to be an ultra
     UltrasCanBeInServer = false, --Set to true if you don't care and can gank the server out
     MaxPlayersOnAlert = 5, --Can be changed to any number seen fit, if you have UltrasCanBeInServer as true you should set this pretty high
-    webhook = "https://discord.com/api/webhooks/927336223800979556/1bvVSJa03GNV8pliZFHNRsIUU2ib18uilVKJ7dUPHeObE-vGh4MSpN6Cws_v2zVK6AqJ", --Insert a webhook here for messages to be sent when a good server is found
+    webhook = "", --Insert a webhook here for messages to be sent when a good server is found
     MaxAmountOfUltras = 0, --Can be set to negatives for example -1 to allow only one ultra
     HopServersEvenIfYouFoundASafe = false --Set to true if you want to find multiple servers ig
 }
